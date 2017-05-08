@@ -3,13 +3,96 @@
 	<head>
 		<meta charset="utf-8">
 		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-		<title>angular.js</title>
+		<title>index.html</title>
 		<meta name="description" content="">
 		<meta name="keywords" content="">
 		<link href="" rel="stylesheet">
 		<script src="angular.min.js"></script>
 	</head>
 	<body>
-		hello {{'world'}}
-	</body>
+		<!-- <div ng-app="" ng-init="firstName='jhon'">
+			<p>在输入框中尝试输入 :</p>
+			<p>姓名：<input type="text" name="" ng-model="firstName"></p>
+			<p>你输入的为:{{firstName}}</p>
+		</div> -->
+		<!-- <div ng-app="" ng-init="quantity=1;cost=5">
+			<h2>价格计算器</h2>
+			数量:<input type="number" ng-model="quantity">
+			价格：<input type="number" ng-model="price">
+			<p>总价：</b>{{quantity*price}}</p>
+		</div> -->
+		<!-- <div ng-app="" ng-init="names=['jerry','sunny','dany']" >
+			<p>使用ng-repeat来循环数组</p>
+			<ul>
+				<li ng-repeat="x in names">{{x}}</li>
+			</ul>
+		</div> -->
+		<!-- <div ng-app="" ng-init="names=[
+			{name:'jerry',country:'china'},
+			{name:'sunny',country:'American'},
+			{name:'lux',country:'India'},
+		]">
+		<p>循环对象</p>
+		<ul>
+			<li ng-repeat="x in names">
+				{{x.name + ' come from ' +x.country}}
+			</li>
+		</ul>
+		</div> -->
+		<!-- <runoob-directive></runoob-directive> -->
+		<!-- <div runoob-directive></div>
+		<script>
+		var app = angular.module("myApp", []);
+		app.directive(".runoobDirective", function() {
+		    return {
+		        template : "<h1>自定义指令!</h1>"
+		    };
+		});
+		</script> -->
+		<!-- <form ng-app="" name="myForm">
+		Email:
+			<input type="email" name="myAdress" ng-model="text">
+			<span style="color:red" ng-show="myForm.myAdress.$error.email"><small>不是个合法的 邮箱</small></span>
+		</form> -->
+
+		<!-- <form ng-app="" name="myForm" ng-init="myText = 'test@runoob.com'">
+		    Email:
+		    <input type="email" name="myAddress" ng-model="myText" required></p>
+		    <h1>状态</h1>
+		    {{myForm.myAddress.$valid}}
+		    {{myForm.myAddress.$dirty}}
+		    {{myForm.myAddress.$touched}}
+		</form> -->
+		<!-- <form ng-app="" name="myForm">
+			输入你的名字：
+			<input name="myAddress" ng-model="text" required>
+		</form>  -->
+		<!-- <div ng-app="myApp" ng-controller="myCtrll">
+		    <input ng-model="name">
+		    <h1>{{greeting}}</h1>
+		    <button ng-click='sayHello()'>点我</button>    
+		</div>
+		 
+		<script>
+		var app = angular.module('myApp', []);
+		app.controller('myCtrll', function($scope) {
+		    $scope.name = "Runoob";
+		    $scope.sayHello = function() {
+		        $scope.greeting = 'Hello ' + $scope.name + '!';
+		    };
+		});
+		</script> -->
+		<div ng-app="myApp" ng-controller="ngAppDemoController">
+			<p> 当前页面的url:</p>
+			<h3>{{myUrl}}</h3>
+		</div>
+
+		<p>该实例使用了内建的 $location 服务获取当前页面的URL.</p>
+
+		<script>
+		var app = angular.module('myApp', []);
+		app.controller('ngAppDemoController', function($scope, $location) {
+		    $scope.myUrl = $location.absUrl();
+		});
+		</script>
 </html>
